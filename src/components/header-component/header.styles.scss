@@ -1,0 +1,40 @@
+.header {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 15px;
+    align-items: center;
+
+        .logo-container {
+            width: 500px;
+            height: 100%;
+            text-align: justify;
+
+            .logo {
+                width: 75%;
+                margin: 16px;
+                padding: 1px;
+               
+            }
+    
+        }
+
+    .options {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 20px;
+        align-items: center;
+        margin: 16px;
+        padding: 1px;
+        cursor: pointer;
+        :hover{
+            font-weight: 750;
+            color: white;
+        }
+    }
+    
+}
+    
+    

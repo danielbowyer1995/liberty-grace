@@ -1,0 +1,22 @@
+.product-item {
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.image{
+    width: 300px;
+    height: 300px;
+
+    &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+    }
+}
+
+// .product-footer {
+//     width: 100%;
+// }
+
+.price{
+    font-weight: 1000;
+}

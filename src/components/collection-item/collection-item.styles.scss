@@ -1,0 +1,32 @@
+.collection-wrapper{
+    position: relative;
+    display: inline-block;
+    margin: 4px;
+    padding: 16px;
+
+    
+
+    .collection-img {
+        width: 300px;
+        height: 300px;
+
+        &:hover {
+            opacity: 0.5;
+            cursor: pointer;
+        }
+    }
+
+    .collection-title {
+        background-color: whitesmoke;
+        opacity: 0.8;
+        color: black;
+        position: absolute;
+        top: 125px;
+        left: 0; 
+        width: 100%;
+        cursor: pointer;
+    }
+}
+
+
+
