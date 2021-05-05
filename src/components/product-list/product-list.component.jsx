@@ -3,33 +3,21 @@ import { Link } from 'react-router-dom'
 import './product-list.styles.scss'
 
 import ProductItem from '../product-item/product-item.component'
-import ProductData from '../product-list/temp.d'
 
-class ProductList extends React.Component {
-    constructor(props){
-        super(props);
-
-        this.state = {
-            products: ProductData
-        }
-    }
-
-    render(props){
+const ProductList = (props) => {
+        const {products} = props.products
         return(
             <div className='list-product'>
-                {this.state.products.map((product) => (
-                    <Link to={`${props.match.url}/${product.path}/${product.id}`}>
+                {products.map((item) => (
+                    <Link key={item.id} to={`${item.path}/${item.id}`}>
                         <ProductItem
-                        key={product.id} 
-                        title={product.title} 
-                        imageUrl={product.imageUrl}
-                        price={product.price}                   
+                            key={item.id}
+                            item={item}           
                         />
                     </Link>
                 ))}
             </div>
         )
-    }
 }
 
 export default ProductList;

@@ -1,5 +1,7 @@
 import React from 'react'
+import ProductItem from '../../components/product-item/product-item.component';
 import ProductData from '../../components/product-list/temp.d';
+
 
 import './product-page.styles.scss'
 
@@ -9,24 +11,28 @@ class ProductPage extends React.Component {
         super(props);
 
         this.state = {
-            product: ProductData[props.match.params.productId]
+            product: [ProductData[props.match.params.productId - 1]]
         }
     }
 
-    render(props){
+    render(){
+        const products = this.state.product 
+        console.log(products)
         return(
             <div className='product-wrapper'>
-                <div className='product-right'>
-                    <img className='product-image' alt='product' src={this.state.product.imageUrl} />
-                </div>
-                <div className='product-left-box'>
-                    <h2>{this.state.product.title}</h2>
-                    <span>{this.state.product.price}</span>
-                    <p>{this.state.product.description}</p>
+                <div className='list-product'>
+                    {products.map((item) => (
+                            <ProductItem
+                                key={item.id}
+                                item={item}             
+                            />
+                    ))}
                 </div>
             </div>
         )
     }
 }
+
+
 
 export default ProductPage

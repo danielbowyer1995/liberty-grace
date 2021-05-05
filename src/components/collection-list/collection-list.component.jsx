@@ -17,15 +17,15 @@ class CollectionList extends React.Component {
     render(){
         return(
             <div>
-                {this.state.collections.map((collection => (
-                    <Link to={`/shop/${collection.path}`}>
+                {this.state.collections.map((collection) => (
+                    <Link key={collection.id} to={`/shop/${collection.path}`}>
                         <CollectionItem 
                             key={collection.id}
                             imageUrl={collection.imageUrl}
                             title={collection.title}
                         />
                     </Link>
-                )))}
+                ))}
             </div>
         )
     }
